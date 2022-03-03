@@ -1,0 +1,42 @@
+#menu-bar {
+    display: none;
+}
+
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;/*Para que cambie el ícono del cursor*/
+}
+
+.menu {
+    position: absolute;
+    top: 50px;/*Para que comience el menú desde abajo del header*/
+    left: 0;
+    width: 100%;
+    height: 100vh;/*Para que siempre ocupe todo el alto de la ventana*/
+    background: rgba(51,51,51,0.9);
+
+    /*Para que cuando seleccionen el ícono de menú, desaparezca*/
+    transition: all 0.5s;/*Para ver como se desplaza*/
+    transform: translateX(-100%);/*Se desplaza de manera horizontal al lado izquierdo*/
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+
+}
+
+.menu a:hover {
+     background: rgba(255,255,255,0.3);/*Para que se cambie de color la barra cada que le ponen un cursor*/
+}
+ 
+/*Para que funcione cada que se de click*/
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
